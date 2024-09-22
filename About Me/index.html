@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        body {
+            background-color: black;
+            color: #00FF00;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            animation: matrix 1.5s infinite alternate; /* Flashing effect for title */
+        }
+
+        @keyframes matrix {
+            0% { opacity: 0.1; }
+            100% { opacity: 1; }
+        }
+
+        .text-container {
+            display: none; /* Initially hidden */
+        }
+
+        .contact {
+            margin-top: 2rem;
+            font-size: 1rem;
+            border-top: 1px solid #00FF00;
+            padding-top: 1rem;
+            display: none; /* Initially hidden */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>About Me</h1>
+        <div class="text-container" id="textContainer"></div>
+        <div class="contact" id="contact">
+            <p>Contact: +94772082399</p>
+            <p>Email: mmahindaratne88@gmail.com</p>
+        </div>
+    </div>
+
+    <script>
+        const lines = [
+            "I am an Attorney-at-Law, from Colombo, Sri Lanka.",
+            "I hold an LLB from the University of London, and an MBA from the Australian Institute of Business.",
+            "Coding has become a passion project for me.",
+            "I would like to contribute to the world of programming and software development in any way I can.",
+            "Please seek me out if you think I can add value to your project, or if I can be valuable asset to your team!",
+            "Thank you!"
+        ];
+
+        let lineIndex = 0;
+        let charIndex = 0;
+
+        function typeCharacter() {
+            const textContainer = document.getElementById('textContainer');
+
+            // Show text container when starting to type
+            if (lineIndex === 0 && charIndex === 0) {
+                textContainer.style.display = 'block'; // Show the text container
+            }
+
+            if (lineIndex < lines.length) {
+                const currentLine = lines[lineIndex];
+
+                // Add a new paragraph if starting a new line
+                if (charIndex === 0) {
+                    textContainer.innerHTML += "<p></p>"; // Add a new paragraph
+                }
+
+                const paragraph = textContainer.lastElementChild;
+
+                if (charIndex < currentLine.length) {
+                    paragraph.textContent += currentLine.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(typeCharacter, 50); // Type next character
+                } else {
+                    lineIndex++;
+                    charIndex = 0;
+                    setTimeout(typeCharacter, 500); // Wait before next line
+                }
+            } else {
+                document.getElementById('contact').style.display = 'block'; // Show contact information
+            }
+        }
+
+        // Start the typing effect
+        typeCharacter();
+    </script>
+</body>
+</html>
