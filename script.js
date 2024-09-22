@@ -43,4 +43,4 @@ function showLinksAndDateTime() {
     setInterval(updateDateTime, 1000);
 }
 
-document.addEventListener("DOMContentLoaded", showLinksAndDateTime);
+document.addEventListener("DOMContentLoaded", showMessage);
