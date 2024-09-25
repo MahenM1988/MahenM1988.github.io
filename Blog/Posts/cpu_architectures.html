@@ -1,1 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding CPU Architectures: 32-bit, 64-bit, and x86</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9; /* Light pastel background */
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            background-color: #ffffff; /* White container */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: #ff6f61; /* Pastel coral for headings */
+        }
+
+        p {
+            font-size: 1rem;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 1rem 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #6a5acd; /* Pastel slate blue */
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #ffb347; /* Pastel orange */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th, td {
+            border: 1px solid #e0e0e0;
+            padding: 0.5rem;
+            text-align: left;
+        }
+
+        th {
+            background-color: #ffb347; /* Light pastel orange */
+            color: #fff;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1rem 0;
+            background-color: #e0f7fa; /* Light pastel blue */
+            border-top: 2px solid #ff6f61; /* Coral border */
+        }
+
+        footer p {
+            color: #333;
+        }
+
+        code {
+            background-color: #f0f0f0;
+            padding: 0.2rem 0.4rem;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Understanding CPU Architectures: 32-bit, 64-bit, and x86</h1>
+
+        <p>When choosing a CPU or operating system, you’ll often come across terms like <strong>32-bit</strong>, <strong>64-bit</strong>, and <strong>x86</strong>. Understanding these concepts is crucial for making informed decisions about your computing needs. In this post, we’ll break down these architectures and their implications.</p>
+
+        <h2>What is 32-bit?</h2>
+        <p><strong>32-bit architecture</strong> refers to a CPU design that processes data in 32-bit chunks. This architecture has some key limitations:</p>
+        <ul>
+            <li><strong>Memory Limitation:</strong> A 32-bit processor can address a maximum of <code>4 GB</code> of RAM directly.</li>
+            <li><strong>Performance:</strong> Generally less efficient for modern applications that require more memory.</li>
+            <li><strong>Compatibility:</strong> Supports older software and operating systems, making it suitable for legacy systems.</li>
+        </ul>
+
+        <h2>What is 64-bit?</h2>
+        <p><strong>64-bit architecture</strong> is the successor to 32-bit, allowing processors to handle data in 64-bit chunks. Here are its main advantages:</p>
+        <ul>
+            <li><strong>Increased Memory Capacity:</strong> Can theoretically address up to <code>16 exabytes</code> of RAM, although practical limits are much lower.</li>
+            <li><strong>Improved Performance:</strong> Better suited for modern applications and multitasking due to its ability to process more data at once.</li>
+            <li><strong>Enhanced Security:</strong> Often includes features like Data Execution Prevention (DEP) and more robust address space layout randomization (ASLR).</li>
+        </ul>
+
+        <h2>What is x86?</h2>
+        <p><strong>x86</strong> refers to the family of instruction set architectures based on the original Intel 8086 CPU. This term is often used to describe:</p>
+        <ul>
+            <li><strong>32-bit Systems:</strong> The term <code>x86</code> is commonly associated with 32-bit architecture.</li>
+            <li><strong>Backward Compatibility:</strong> x86 CPUs can typically run older software designed for previous generations of Intel processors.</li>
+            <li><strong>Extension to x64:</strong> The x86 architecture has been extended to support 64-bit computing, which is often referred to as <code>x86-64</code> or <code>AMD64</code>.</li>
+        </ul>
+
+        <h2>Comparing 32-bit and 64-bit Architectures</h2>
+        <p>To summarize the differences, here’s a quick comparison:</p>
+        
+        <table>
+            <tr>
+                <th>Feature</th>
+                <th>32-bit (x86)</th>
+                <th>64-bit (x64)</th>
+            </tr>
+            <tr>
+                <td>Memory Addressing</td>
+                <td>Max 4 GB RAM</td>
+                <td>Theoretically up to 16 exabytes</td>
+            </tr>
+            <tr>
+                <td>Performance</td>
+                <td>Limited processing capability</td>
+                <td>Higher efficiency and speed</td>
+            </tr>
+            <tr>
+                <td>Software Compatibility</td>
+                <td>Older applications</td>
+                <td>Modern applications, can run 32-bit software</td>
+            </tr>
+        </table>
+
+        <h2>Conclusion</h2>
+        <p>Understanding the distinctions between 32-bit, 64-bit, and x86 architectures is essential for anyone looking to optimize their computing experience. Whether you’re upgrading hardware or choosing software, this knowledge empowers you to make the best decisions for your needs.</p>
+        
+    </div>
+
+    <footer>
+        <p>© Mahen Mahindaratne 2024</p>
+    </footer>
+
+</body>
+</html>
 
