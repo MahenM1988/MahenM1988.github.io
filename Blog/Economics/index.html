@@ -1,0 +1,92 @@
+HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+<nav id="navbar">
+  <header><h1>Using Diskpart to Format a USB Drive</h1></header>
+  <a class="nav-link" href="#Accessing_Command_Prompt">Accessing Command Prompt</a>
+  <a class="nav-link" href="#Accessing_Diskpart">Accessing Diskpart</a>
+  <a class="nav-link" href="#List_Available_Disks">List Available Disks</a>
+  <a class="nav-link" href="#Identify_Disk_to_Format">Identify Disk to Format</a>
+  <a class="nav-link" href="#Select_Disk">Select Disk</a>
+  <a class="nav-link" href="#Clean">Clean</a>
+  <a class="nav-link" href="#Create_Partition_Primary">Create Partition Primary</a>
+  <a class="nav-link" href="#Select_Partition_Primary">Select Partition Primary</a>
+  <a class="nav-link" href="#Format">Format</a>
+  <a class="nav-link" href="#Assign_Drive_Letter">Assign Drive Letter</a>
+  <a class="nav-link" href="#Exit_Diskpart">Exit Diskpart</a>
+  <a class="nav-link" href="#Exit_Command_Prompt">Exit Command Prompt</a>
+</nav>
+
+<div id="main-doc">
+  <section class="main-section" id="Accessing_Command_Prompt">
+    <header>Accessing Command Prompt</header>
+    <p><li>Press Windows + X on your keyboard to open the Power User menu. Select "Command Prompt (Admin)" or "Windows PowerShell (Admin)".</li></p>
+  </section>
+
+  <section class="main-section" id="Accessing_Diskpart">
+    <header>Accessing Diskpart</header>
+    <p><li>In the Command Prompt or PowerShell window, type <code>diskpart</code> and press Enter.</li></p>
+  </section>
+
+  <section class="main-section" id="List_Available_Disks">
+    <header>List Available Disks</header>
+    <p><li>Type <code>list disk</code> and press Enter to display a list of all available disks on your computer.</li></p>
+  </section>
+
+  <section class="main-section" id="Identify_Disk_to_Format">
+    <header>Identify Disk to Format</header>
+    <p><li>Carefully identify your USB drive from the list. Note the size of the drive to avoid formatting the wrong disk.</li></p>
+  </section>
+
+  <section class="main-section" id="Select_Disk">
+    <header>Select Disk</header>
+    <p><li>Type <code>select disk X</code> (replace X with the number corresponding to your USB drive) and press Enter.</li></p>
+  </section>
+
+  <section class="main-section" id="Clean">
+    <header>Clean</header>
+    <p><li>Type <code>clean</code> and press Enter. This command removes all partitions and volumes from the selected disk.</li></p>
+  </section>
+
+  <section class="main-section" id="Create_Partition_Primary">
+    <header>Create Partition Primary</header>
+    <p><li>Type <code>create partition primary</code> and press Enter. This command creates a new primary partition on the USB drive.</li></p>
+  </section>
+
+  <section class="main-section" id="Select_Partition_Primary">
+    <header>Select Partition Primary</header>
+    <p><li>Type <code>select partition 1</code> and press Enter.</li></p>
+  </section>
+
+  <section class="main-section" id="Format">
+    <header>Format</header>
+    <p><li>Type <code>format fs=ntfs</code> and press Enter to format the partition using the NTFS file system. If you prefer FAT32, use <code>format fs=fat32</code> instead.</li></p>
+  </section>
+
+  <section class="main-section" id="Assign_Drive_Letter">
+    <header>Assign Drive Letter</header>
+    <p><li>Type <code>assign letter=X</code> (replace X with the desired drive letter) and press Enter. This assigns a drive letter to the USB drive.</li></p>
+  </section>
+
+  <section class="main-section" id="Exit_Diskpart">
+    <header>Exit Diskpart</header>
+    <p><li>Type <code>exit</code> and press Enter to leave the DiskPart utility.</li></p>
+  </section>
+
+  <section class="main-section" id="Exit_Command_Prompt">
+    <header>Exit Command Prompt</header>
+    <p><li>Type <code>exit</code> and press Enter to close the Command Prompt.</li></p>
+  </section>
+
+</div>
+
+</body>
+</html>
