@@ -16,7 +16,6 @@ header {
 }
 
 main {
-    display: flex; /* Set main as a flex container */
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
 }
