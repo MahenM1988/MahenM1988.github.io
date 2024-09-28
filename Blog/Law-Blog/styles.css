@@ -22,11 +22,6 @@ main {
     margin: 0; /* Remove default margin */
 }
 
-iframe {
-    max-width: 100%; /* Ensure it doesn't overflow */
-    height: auto; /* Maintain aspect ratio */
-}
-
 .main-content {
     color: #0078d7; /* Blue text for posts */
 }
