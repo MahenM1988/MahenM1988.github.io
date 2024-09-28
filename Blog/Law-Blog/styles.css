@@ -32,6 +32,7 @@ nav {
     display: flex;
     flex-direction: row; /* Keep the links in a row */
     justify-content: center; /* Center the nav items */
+    margin-top: 20px;
 }
 
 nav ul {
