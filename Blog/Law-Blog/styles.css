@@ -19,8 +19,6 @@ main {
     display: flex; /* Set main as a flex container */
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
-    padding: 20px; /* Optional padding */
-    height: 100vh; /* Optional: full height of the viewport */
 }
 
 .main-content {
