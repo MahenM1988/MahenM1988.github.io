@@ -34,13 +34,11 @@
             margin-bottom: 1.5rem;
             color: #ff00ff; /* Neon magenta */
             text-shadow: 0 0 10px rgba(255, 0, 255, 0.8);
-            animation: matrix 1.5s infinite alternate; /* Flashing effect for title */
         }
 
         h2 {
             color: #ff4f4f; /* Neon red */
             margin-top: 2rem;
-            text-shadow: 0 0 5px rgba(255, 79, 79, 0.5);
         }
 
         p {
@@ -55,26 +53,12 @@
 
         li {
             margin: 1rem 0;
-            transition: transform 0.2s, background-color 0.3s;
-            padding: 10px;
-            border-radius: 8px;
-        }
-
-        li:hover {
-            transform: translateY(-3px);
-            background-color: rgba(255, 255, 255, 0.1); /* Light background on hover */
         }
 
         a {
             text-decoration: none;
             color: #00FF00; /* Neon green */
             font-weight: bold;
-            transition: color 0.3s, text-shadow 0.3s;
-        }
-
-        a:hover {
-            color: #ff00ff; /* Neon magenta */
-            text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
         }
 
         footer {
@@ -89,20 +73,7 @@
             color: #00FF00;
         }
 
-        @keyframes matrix {
-            0% { opacity: 0.1; }
-            100% { opacity: 1; }
-        }
-
         .text-container {
-            display: none; /* Initially hidden */
-        }
-
-        .contact {
-            margin-top: 2rem;
-            font-size: 1rem;
-            border-top: 1px solid #00FF00;
-            padding-top: 1rem;
             display: none; /* Initially hidden */
         }
     </style>
@@ -181,8 +152,6 @@
                     charIndex = 0;
                     setTimeout(typeCharacter, 500); // Wait before next line
                 }
-            } else {
-                document.getElementById('contact').style.display = 'block'; // Show contact information
             }
         }
 
