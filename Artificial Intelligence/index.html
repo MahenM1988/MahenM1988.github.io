@@ -118,49 +118,52 @@
     </footer>
 
     <script>
-        const lines = [
-            "Enriching the learning experience is key to developing effective AI models. There are two types of data:",
-            "Labeled Data, which attributes labels to each data point within the dataset, and Unlabeled Data, which has no labels associated with the data points.",
-            "The way labeled data is processed can vary depending on the dataset.",
-            "When the relationship between the X and Y variables is linear, Linear Regression is best to predict a given outcome. When the prediction needs to be a class category or label rather than a value, Logistic Regression can be used. When dealing with non-linear data or improving a linear dataset, Support Vector Machines (SVM) can be employed to add an extra dimension. Decision Trees follow a defined path when processing a dataset. Random Forests can take a Decision Tree and randomize the branches for a more diverse learning experience.",
-            "K-Means Clustering uses the K-Means algorithm to identify a predefined number of clusters in a dataset, identifying centroids within each cluster. Hierarchical Clustering does not have a predefined number of clusters but evaluates the data based on its size, identifying clusters and centroids. When dealing with non-linear data that can be interpreted in various ways, Principal Component Analysis (PCA) helps identify what is relevant for interpretation.",
-            "Gradient Boosting can enhance the performance of models, particularly with non-linear data. If all we have are observations of events with hidden states and a defined set of probabilities, a Hidden Markov Model can be used. K-Nearest Neighbors (KNN) can predict outcomes based on how the data points relate to each other within the dataset. A Naive Bayes Classifier uses Bayes' theorem to classify data into two or more labels."
-        ];
+    const lines = [
+        "Enriching the learning experience is key to developing effective AI models. There are two types of data:",
+        "Labeled Data, which attributes labels to each data point within the dataset, and Unlabeled Data, which has no labels associated with the data points.",
+        "The way labeled data is processed can vary depending on the dataset.",
+        "When the relationship between the X and Y variables is linear, Linear Regression is best to predict a given outcome. When the prediction needs to be a class category or label rather than a value, Logistic Regression can be used. When dealing with non-linear data or improving a linear dataset, Support Vector Machines (SVM) can be employed to add an extra dimension. Decision Trees follow a defined path when processing a dataset. Random Forests can take a Decision Tree and randomize the branches for a more diverse learning experience.",
+        "K-Means Clustering uses the K-Means algorithm to identify a predefined number of clusters in a dataset, identifying centroids within each cluster. Hierarchical Clustering does not have a predefined number of clusters but evaluates the data based on its size, identifying clusters and centroids. When dealing with non-linear data that can be interpreted in various ways, Principal Component Analysis (PCA) helps identify what is relevant for interpretation.",
+        "Gradient Boosting can enhance the performance of models, particularly with non-linear data. If all we have are observations of events with hidden states and a defined set of probabilities, a Hidden Markov Model can be used. K-Nearest Neighbors (KNN) can predict outcomes based on how the data points relate to each other within the dataset. A Naive Bayes Classifier uses Bayes' theorem to classify data into two or more labels."
+    ];
 
-        let lineIndex = 0;
-        let charIndex = 0;
+    let lineIndex = 0;
+    let charIndex = 0;
 
-        function typeCharacter() {
-            const textContainer = document.getElementById('textContainer');
+    function typeCharacter() {
+        const textContainer = document.getElementById('textContainer');
 
-            if (lineIndex === 0 && charIndex === 0) {
-                textContainer.style.display = 'block'; // Show the text container
-            }
-
-            if (lineIndex < lines.length) {
-                const currentLine = lines[lineIndex];
-
-                if (charIndex === 0) {
-                    textContainer.innerHTML += "<p></p>"; // Add a new paragraph
-                }
-
-                const paragraph = textContainer.lastElementChild;
-
-                if (charIndex < currentLine.length) {
-                    paragraph.textContent += currentLine.charAt(charIndex);
-                    charIndex++;
-                    setTimeout(typeCharacter, 50); // Type next character
-                } else {
-                    lineIndex++;
-                    charIndex = 0;
-                    setTimeout(typeCharacter, 500); // Wait before next line
-                }
-            }
+        if (lineIndex === 0 && charIndex === 0) {
+            textContainer.style.display = 'block'; // Show the text container
         }
 
-        window.onload = () => {
-            typeCharacter(); // Start typing after the entire page is loaded
-        };
+        if (lineIndex < lines.length) {
+            const currentLine = lines[lineIndex];
+
+            if (charIndex === 0) {
+                textContainer.innerHTML += "<p></p>"; // Add a new paragraph
+            }
+
+            const paragraph = textContainer.lastElementChild;
+
+            if (charIndex < currentLine.length) {
+                paragraph.textContent += currentLine.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeCharacter, 50); // Type next character
+            } else {
+                lineIndex++;
+                charIndex = 0;
+                setTimeout(typeCharacter, 500); // Wait before next line
+            }
+        } else {
+            // Animation complete; keep the text displayed
+            textContainer.style.display = 'block'; // Ensure it stays visible
+        }
+    }
+
+    window.onload = () => {
+        typeCharacter(); // Start typing after the entire page is loaded
+    };
     </script>
 </body>
 </html>
