@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Server Setup Instructions</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #306998; /* Python Blue */
+        }
+        h2 {
+            color: #FFD43B; /* Python Gold */
+        }
+        code {
+            background-color: #e9ecef;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        pre {
+            background-color: #272822; /* Dark Background */
+            color: #306998; /* Python Blue */
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        a {
+            color: #007acc; /* Link color */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Setting Up a Simple Flask Server</h1>
+    
+    <h2>Step 1: Install Flask</h2>
+    <p>First, ensure you have Python installed. Then, you can install Flask using pip. Open your terminal or command prompt and run:</p>
+    <pre><code>pip install Flask python-dotenv</code></pre>
+
+    <h2>Step 2: Create the Project Directory</h2>
+    <p>Create a directory for your Flask project:</p>
+    <pre><code>mkdir my_flask_app</code></pre>
+    <pre><code>cd my_flask_app</code></pre>
+
+    <h2>Step 3: Create the Flask Application</h2>
+    <p>Inside your project directory, create a new file called <code>app.py</code> and add the following code:</p>
+    <pre><code>from flask import Flask, render_template, session
+import os
+from dotenv import load_dotenv
+import secrets
+
+# Load environment variables from .env file
+load_dotenv()
+
+app = Flask(__name__)
+app.secret_key = os.getenv("SECRET_KEY", secrets.token_hex(16))  # Use secret key from .env or generate a random one
+
+@app.route('/')
+def home():
+    # Generate a random session cookie for each user and tab
+    session['user_session_id'] = secrets.token_hex(16)
+    return render_template('index.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)</code></pre>
+
+    <h2>Step 4: Create the .env File</h2>
+    <p>Create a file named <code>.env</code> in your project directory. This file can be used to store environment variables. Add your variables like this:</p>
+    <pre><code>FLASK_ENV=development
+SECRET_KEY=your_secret_key_here</code></pre>
+
+    <h2>Step 5: Create the HTML Template</h2>
+    <p>Next, create a folder named <code>templates</code> in your project directory. Inside this folder, create a file named <code>index.html</code> and add some basic HTML:</p>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Welcome to Flask!&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello, Flask!&lt;/h1&gt;
+    &lt;p&gt;This is your index page.&lt;/p&gt;
+    &lt;p&gt;Your session ID is: &lt;span&gt;&lt;script&gt;document.write(sessionStorage.getItem('user_session_id'));&lt;/script&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+    <h2>Step 6: Run the Flask Server</h2>
+    <p>Now, you can run your Flask application. In your terminal, ensure you are in the project directory and run:</p>
+    <pre><code>python app.py</code></pre>
+    <p>Your Flask server should now be running on <code>http://127.0.0.1:5000</code>. Open this URL in your web browser to see your index page!</p>
+
+    <h2>Conclusion</h2>
+    <p>You have successfully set up a simple Flask server to serve an HTML page, used a .env file to manage environment variables, and implemented random session cookies for each user and tab. You can expand upon this basic setup to create more complex applications!</p>
+
+</body>
+</html>
