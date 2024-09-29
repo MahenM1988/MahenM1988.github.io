@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducing Hashing and Salting Passwords</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9; /* Light pastel background */
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            background-color: #ffffff; /* White container */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: #ff6f61; /* Pastel coral for headings */
+        }
+
+        p {
+            font-size: 1rem;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 1rem 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #6a5acd; /* Pastel slate blue */
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #ffb347; /* Pastel orange */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th, td {
+            border: 1px solid #e0e0e0;
+            padding: 0.5rem;
+            text-align: left;
+        }
+
+        th {
+            background-color: #ffb347; /* Light pastel orange */
+            color: #fff;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1rem 0;
+            background-color: #e0f7fa; /* Light pastel blue */
+            border-top: 2px solid #ff6f61; /* Coral border */
+        }
+
+        footer p {
+            color: #333;
+        }
+
+        code {
+            background-color: #f0f0f0;
+            padding: 0.2rem 0.4rem;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Introducing Hashing and Salting Passwords</h1>
+
+        <p>In today's digital landscape, securing user passwords is essential for protecting sensitive data. Hashing and salting are two techniques that enhance password security. This post will explore different hashing algorithms, the importance of salting, and how bcrypt offers superior protection.</p>
+
+        <h2>What is Hashing?</h2>
+        <p><strong>Hashing</strong> is the process of converting an input (or 'message') into a fixed-length string of bytes. The output, known as the hash value, is unique to each unique input. However, some hash functions are more secure than others. Below, we compare several popular hashing algorithms available in Python's <code>hashlib</code> module:</p>
+
+        <table>
+            <tr>
+                <th>Algorithm</th>
+                <th>Usage</th>
+                <th>Strength</th>
+            </tr>
+            <tr>
+                <td>MD5</td>
+                <td><code>hashlib.md5()</code></td>
+                <td>Weak; vulnerable to collisions and not recommended for security.</td>
+            </tr>
+            <tr>
+                <td>SHA-1</td>
+                <td><code>hashlib.sha1()</code></td>
+                <td>Weak; also vulnerable to collisions.</td>
+            </tr>
+            <tr>
+                <td>SHA-224</td>
+                <td><code>hashlib.sha224()</code></td>
+                <td>More secure than MD5 and SHA-1 but less common.</td>
+            </tr>
+            <tr>
+                <td>SHA-256</td>
+                <td><code>hashlib.sha256()</code></td>
+                <td>Strong; widely used in security applications.</td>
+            </tr>
+            <tr>
+                <td>SHA-384</td>
+                <td><code>hashlib.sha384()</code></td>
+                <td>Strong; offers a longer hash value for additional security.</td>
+            </tr>
+            <tr>
+                <td>SHA-512</td>
+                <td><code>hashlib.sha512()</code></td>
+                <td>Strong; provides a very long hash value for high-security applications.</td>
+            </tr>
+            <tr>
+                <td>SHA-3</td>
+                <td><code>hashlib.sha3_256()</code></td>
+                <td>Strong; latest standard with improved security features.</td>
+            </tr>
+        </table>
+
+        <h2>Why Salt Passwords?</h2>
+        <p><strong>Salting</strong> involves adding a unique, random value to each password before hashing. This makes it more challenging for attackers to use precomputed tables (Rainbow Tables) to crack passwords, as even identical passwords will have different hash values due to the unique salt.</p>
+        
+        <h3>Benefits of Salting:</h3>
+        <ul>
+            <li><strong>Brute Force Resistance:</strong> Makes it significantly harder for attackers to guess passwords, as each password hash is unique.</li>
+            <li><strong>Rainbow Table Attack Prevention:</strong> The use of salts renders precomputed hash tables ineffective, requiring attackers to generate new tables for each salt value.</li>
+        </ul>
+
+        <h2>Why Bcrypt?</h2>
+        <p><strong>Bcrypt</strong> is a password-hashing function designed for secure password storage. It incorporates salting and is adaptive, meaning it can be configured to increase the time it takes to compute hashes, further enhancing security against brute-force attacks.</p>
+
+        <h3>Advantages of Bcrypt:</h3>
+        <ul>
+            <li><strong>Automatic Salting:</strong> Bcrypt automatically generates a unique salt for each password.</li>
+            <li><strong>Time Complexity:</strong> It allows adjustment of the hashing time, making it slower as hardware improves, thus continually increasing security.</li>
+            <li><strong>Inherent Resistance to Rainbow Table Attacks:</strong> Bcrypt's unique structure means precomputed hash tables are virtually ineffective.</li>
+        </ul>
+
+        <h2>Conclusion</h2>
+        <p>Understanding and implementing proper password hashing and salting techniques is essential for maintaining user security. While algorithms like SHA-256 are strong for data integrity, bcrypt is the gold standard for password storage due to its adaptive nature and built-in salting. By adopting these practices, developers can significantly enhance the security of their applications.</p>
+        
+    </div>
+
+    <footer>
+        <p>© Your Name 2024</p>
+    </footer>
+
+</body>
+</html>
