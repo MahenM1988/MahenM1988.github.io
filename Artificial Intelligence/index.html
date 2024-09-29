@@ -20,14 +20,12 @@
         }
 
         .container {
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
+            max-width: 800px;
             padding: 2rem;
             background-color: rgba(0, 0, 0, 0.8); /* Dark semi-transparent */
             border-radius: 15px;
             box-shadow: 0 0 20px rgba(0, 255, 0, 0.5); /* Neon green glow */
             text-align: left; /* Left-aligning text inside container */
-            overflow-y: auto; /* Enable vertical scrolling */
         }
 
         h1 {
@@ -157,4 +155,9 @@
             }
         }
 
-        window.onload = ()
+        window.onload = () => {
+            typeCharacter(); // Start typing after the entire page is loaded
+        };
+    </script>
+</body>
+</html>
