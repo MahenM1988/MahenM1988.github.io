@@ -21,6 +21,7 @@ body {
 /* Headings */
 h1, h2, h3 {
     color: #00FF00;
+    margin-bottom: 0px;
 }
 
 /* Links */
