@@ -5,153 +5,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artificial Intelligence</title>
     <style>
-      body {
-          background-color: black; /* Black background for terminal look */
-          color: #00FF00; /* Neon green text */
-          font-family: 'Courier New', Courier, monospace;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 100vh;
-          text-align: center;
-          overflow: hidden;
-          margin: 0;
-          padding: 0;
-          line-height: 1.6;
-      }
+        body {
+            background-color: black; /* Black background for terminal look */
+            color: #00FF00; /* Neon green text */
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
 
-      .container {
-          max-width: 800px;
-          margin: 2rem auto;
-          padding: 2rem;
-          background-color: rgba(0, 0, 0, 0.8); /* Dark semi-transparent */
-          border-radius: 15px;
-          box-shadow: 0 0 20px rgba(0, 255, 0, 0.5); /* Neon green glow */
-      }
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: rgba(0, 0, 0, 0.8); /* Dark semi-transparent */
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5); /* Neon green glow */
+        }
 
-      h1 {
-          font-size: 2.5rem;
-          margin-bottom: 1.5rem;
-          color: #ff00ff; /* Neon magenta */
-          text-shadow: 0 0 10px rgba(255, 0, 255, 0.8);
-          animation: matrix 1.5s infinite alternate; /* Flashing effect for title */
-      }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #ff00ff; /* Neon magenta */
+            text-shadow: 0 0 10px rgba(255, 0, 255, 0.8);
+            animation: matrix 1.5s infinite alternate; /* Flashing effect for title */
+        }
 
-      h2 {
-          color: #ff4f4f; /* Neon red */
-          margin-top: 2rem;
-          text-shadow: 0 0 5px rgba(255, 79, 79, 0.5);
-      }
-  
-      p {
-          font-size: 1.2rem;
-          text-align: center;
-      }
+        h2 {
+            color: #ff4f4f; /* Neon red */
+            margin-top: 2rem;
+            text-shadow: 0 0 5px rgba(255, 79, 79, 0.5);
+        }
 
-      ul {
-          list-style-type: none;
-          padding: 0;
-      }
+        p {
+            font-size: 1.2rem;
+            text-align: center;
+        }
 
-      li {
-          margin: 1rem 0;
-          transition: transform 0.2s, background-color 0.3s;
-          padding: 10px;
-          border-radius: 8px;
-      }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
 
-      li:hover {
-          transform: translateY(-3px);
-          background-color: rgba(255, 255, 255, 0.1); /* Light background on hover */
-      }
+        li {
+            margin: 1rem 0;
+            transition: transform 0.2s, background-color 0.3s;
+            padding: 10px;
+            border-radius: 8px;
+        }
 
-      a {
-          text-decoration: none;
-          color: #00FF00; /* Neon green */
-          font-weight: bold;
-          transition: color 0.3s, text-shadow 0.3s;
-      }
+        li:hover {
+            transform: translateY(-3px);
+            background-color: rgba(255, 255, 255, 0.1); /* Light background on hover */
+        }
 
-      a:hover {
-          color: #ff00ff; /* Neon magenta */
-          text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
-      }
+        a {
+            text-decoration: none;
+            color: #00FF00; /* Neon green */
+            font-weight: bold;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
 
-      footer {
-          text-align: center;
-          margin-top: 2rem;
-          padding: 1rem 0;
-          background-color: rgba(0, 0, 0, 0.8); /* Dark semi-transparent footer */
-          border-top: 3px solid #00FF00; /* Neon green border */
-      }
+        a:hover {
+            color: #ff00ff; /* Neon magenta */
+            text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+        }
 
-      footer p {
-          color: #00FF00;
-      }
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1rem 0;
+            background-color: rgba(0, 0, 0, 0.8); /* Dark semi-transparent footer */
+            border-top: 3px solid #00FF00; /* Neon green border */
+        }
 
-      @keyframes matrix {
-          0% { opacity: 0.1; }
-          100% { opacity: 1; }
-      }
+        footer p {
+            color: #00FF00;
+        }
 
-      .text-container {
-          display: none; /* Initially hidden */
-      }
+        @keyframes matrix {
+            0% { opacity: 0.1; }
+            100% { opacity: 1; }
+        }
 
-      .contact {
-          margin-top: 2rem;
-          font-size: 1rem;
-          border-top: 1px solid #00FF00;
-          padding-top: 1rem;
-          display: none; /* Initially hidden */
-      }
-</style>
+        .text-container {
+            display: none; /* Initially hidden */
+        }
+
+        .contact {
+            margin-top: 2rem;
+            font-size: 1rem;
+            border-top: 1px solid #00FF00;
+            padding-top: 1rem;
+            display: none; /* Initially hidden */
+        }
+    </style>
 </head>
 <body>
-    <script>
-        const lines = [
-            "Enriching the learning experience is key to developing effective AI models. There are two types of data:",
-            "Labeled Data, which attributes labels to each data point within the dataset, and Unlabeled Data, which has no labels associated with the data points.",
-            "The way labeled data is processed can vary depending on the dataset.",
-            "When the relationship between the X and Y variables is linear, Linear Regression is best to predict a given outcome. When the prediction needs to be a class category or label rather than a value, Logistic Regression can be used. When dealing with non-linear data or improving a linear dataset, Support Vector Machines (SVM) can be employed to add an extra dimension. Decision Trees follow a defined path when processing a dataset. Random Forests can take a Decision Tree and randomize the branches for a more diverse learning experience.",
-            "K-Means Clustering uses the K-Means algorithm to identify a predefined number of clusters in a dataset, identifying centroids within each cluster. Hierarchical Clustering does not have a predefined number of clusters but evaluates the data based on its size, identifying clusters and centroids. When dealing with non-linear data that can be interpreted in various ways, Principal Component Analysis (PCA) helps identify what is relevant for interpretation.",
-            "Gradient Boosting can enhance the performance of models, particularly with non-linear data. If all we have are observations of events with hidden states and a defined set of probabilities, a Hidden Markov Model can be used. K-Nearest Neighbors (KNN) can predict outcomes based on how the data points relate to each other within the dataset. A Naive Bayes Classifier uses Bayes' theorem to classify data into two or more labels."
-        ];
-
-        let lineIndex = 0;
-        let charIndex = 0;
-
-        function typeCharacter() {
-            const textContainer = document.getElementById('textContainer');
-
-            // Show text container when starting to type
-            if (lineIndex === 0 && charIndex === 0) {
-                textContainer.style.display = 'block'; // Show the text container
-            }
-
-            if (lineIndex < lines.length) {
-                const currentLine = lines[lineIndex];
-
-                // Add a new paragraph if starting a new line
-                if (charIndex === 0) {
-                    textContainer.innerHTML += "<p></p>"; // Add a new paragraph
-                }
-
-                const paragraph = textContainer.lastElementChild;
-
-                if (charIndex < currentLine.length) {
-                    paragraph.textContent += currentLine.charAt(charIndex);
-                    charIndex++;
-                    setTimeout(typeCharacter, 50); // Type next character
-                } else {
-                    lineIndex++;
-                    charIndex = 0;
-                    setTimeout(typeCharacter, 500); // Wait before next line
-                }
-            } else {
-                document.getElementById('contact').style.display = 'block'; // Show contact information
-            }
-        }
     <div class="container">
         <h1>Artificial Intelligence</h1>
         
@@ -186,5 +142,53 @@
     <footer>
         <p>© Mahen Mahindaratne 2024</p>
     </footer>
+
+    <script>
+        const lines = [
+            "Enriching the learning experience is key to developing effective AI models. There are two types of data:",
+            "Labeled Data, which attributes labels to each data point within the dataset, and Unlabeled Data, which has no labels associated with the data points.",
+            "The way labeled data is processed can vary depending on the dataset.",
+            "When the relationship between the X and Y variables is linear, Linear Regression is best to predict a given outcome. When the prediction needs to be a class category or label rather than a value, Logistic Regression can be used. When dealing with non-linear data or improving a linear dataset, Support Vector Machines (SVM) can be employed to add an extra dimension. Decision Trees follow a defined path when processing a dataset. Random Forests can take a Decision Tree and randomize the branches for a more diverse learning experience.",
+            "K-Means Clustering uses the K-Means algorithm to identify a predefined number of clusters in a dataset, identifying centroids within each cluster. Hierarchical Clustering does not have a predefined number of clusters but evaluates the data based on its size, identifying clusters and centroids. When dealing with non-linear data that can be interpreted in various ways, Principal Component Analysis (PCA) helps identify what is relevant for interpretation.",
+            "Gradient Boosting can enhance the performance of models, particularly with non-linear data. If all we have are observations of events with hidden states and a defined set of probabilities, a Hidden Markov Model can be used. K-Nearest Neighbors (KNN) can predict outcomes based on how the data points relate to each other within the dataset. A Naive Bayes Classifier uses Bayes' theorem to classify data into two or more labels."
+        ];
+
+        let lineIndex = 0;
+        let charIndex = 0;
+
+        function typeCharacter() {
+            const textContainer = document.getElementById('textContainer');
+
+            if (lineIndex === 0 && charIndex === 0) {
+                textContainer.style.display = 'block'; // Show the text container
+            }
+
+            if (lineIndex < lines.length) {
+                const currentLine = lines[lineIndex];
+
+                if (charIndex === 0) {
+                    textContainer.innerHTML += "<p></p>"; // Add a new paragraph
+                }
+
+                const paragraph = textContainer.lastElementChild;
+
+                if (charIndex < currentLine.length) {
+                    paragraph.textContent += currentLine.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(typeCharacter, 50); // Type next character
+                } else {
+                    lineIndex++;
+                    charIndex = 0;
+                    setTimeout(typeCharacter, 500); // Wait before next line
+                }
+            } else {
+                document.getElementById('contact').style.display = 'block'; // Show contact information
+            }
+        }
+
+        window.onload = () => {
+            typeCharacter(); // Start typing after the entire page is loaded
+        };
+    </script>
 </body>
 </html>
