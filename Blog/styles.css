@@ -1,0 +1,106 @@
+/* General Styles */
+body {
+    background-color: black;
+    color: #00FF00;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.container {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    text-align: center; /* Center text in container */
+}
+
+/* Headings */
+h1, h2, h3 {
+    color: #00FF00;
+}
+
+/* Links */
+a {
+    color: #00FF00;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+a:hover {
+    color: #00CC00; /* Change color on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Lists */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    margin: 5px 0; /* Space between list items */
+}
+
+/* Code Blocks */
+pre {
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+code {
+    color: #00FF00;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #00FF00;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #444;
+}
+
+/* Footer */
+footer {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.8em;
+}
+
+/* Additional Styles for Message and Links */
+.message {
+    font-size: 2em;
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+.links {
+    font-size: 1.5em;
+    margin-top: 20px;
+}
+
+.links ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+.links li {
+    margin: 10px 0; /* Space between links */
+}
