@@ -155,12 +155,12 @@
                     charIndex = 0;
                     setTimeout(typeCharacter, 500); // Wait before next line
                 }
+            } else {
+                textContainer.style.display = 'block'; // Ensure it's displayed once finished
             }
         }
 
-        window.onload = () => {
-            typeCharacter(); // Start typing effect on page load
-        };
+        window.onload = typeCharacter; // Start typing when page loads
     </script>
 </body>
 </html>
