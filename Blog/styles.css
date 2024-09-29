@@ -48,36 +48,15 @@ ul {
     display: inline-block; /* Center the links section */
 }
 
-.links p {
-    margin: 10px 0; /* Space between paragraphs */
-}
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
 
-/* Code Blocks */
-pre {
-    background-color: #333;
-    padding: 10px;
-    border-radius: 5px;
-    overflow-x: auto;
-}
-
-code {
-    color: #00FF00;
-}
-
-/* Table Styles */
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th, td {
-    border: 1px solid #00FF00;
-    padding: 10px;
-    text-align: left;
-}
-
-th {
-    background-color: #444;
+    .links {
+        font-size: 1.2em; /* Smaller links on mobile */
+    }
 }
 
 /* Footer */
@@ -89,31 +68,4 @@ footer {
     text-align: center;
     padding: 10px 0;
     font-size: 0.8em;
-}
-
-/* Additional Styles for Message and Links */
-.message {
-    font-size: 2em;
-    opacity: 1;
-    transition: opacity 1s ease;
-}
-
-/* Styling for the hidden links */
-#links {
-    display: none; /* Keep links hidden initially */
-}
-
-#links.visible {
-    display: block; /* Show links when visible class is added */
-}
-
-/* Responsive Adjustments */
-@media (max-width: 600px) {
-    body {
-        font-size: 14px; /* Adjust font size for smaller screens */
-    }
-
-    .links {
-        font-size: 1.2em; /* Smaller links on mobile */
-    }
 }
