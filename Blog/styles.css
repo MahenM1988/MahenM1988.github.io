@@ -41,8 +41,15 @@ ul {
     padding-left: 0;
 }
 
-li {
-    margin: 5px 0; /* Space between list items */
+/* Links Section */
+.links {
+    font-size: 1.5em;
+    margin-top: 20px;
+    display: inline-block; /* Center the links section */
+}
+
+.links p {
+    margin: 10px 0; /* Space between paragraphs */
 }
 
 /* Code Blocks */
@@ -91,16 +98,22 @@ footer {
     transition: opacity 1s ease;
 }
 
-.links {
-    font-size: 1.5em;
-    margin-top: 20px;
+/* Styling for the hidden links */
+#links {
+    display: none; /* Keep links hidden initially */
 }
 
-.links ul {
-    list-style-type: none; /* Remove bullet points */
-    padding: 0; /* Remove padding */
+#links.visible {
+    display: block; /* Show links when visible class is added */
 }
 
-.links li {
-    margin: 10px 0; /* Space between links */
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+
+    .links {
+        font-size: 1.2em; /* Smaller links on mobile */
+    }
 }
