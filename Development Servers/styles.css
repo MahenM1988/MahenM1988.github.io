@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.tiles {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.tile {
+    width: 45%;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    transition: transform 0.2s;
+}
+
+.tile:hover {
+    transform: scale(1.05);
+}
+
+.nodejs {
+    background-color: #4CAF50; /* Green background for Node.js */
+    color: #2C3E50; /* Darker green text */
+}
+
+.python {
+    background-color: #FFD43B; /* Yellow background for Python */
+    color: #306998; /* Blue text */
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+}

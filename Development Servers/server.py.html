@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Server Setup Instructions</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #306998; /* Python Blue */
+        }
+        h2 {
+            color: #FFD43B; /* Python Gold */
+        }
+        code {
+            background-color: #e9ecef;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        pre {
+            background-color: #272822; /* Dark Background */
+            color: #306998; /* Python Blue */
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        a {
+            color: #007acc; /* Link color */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Setting Up a Simple Flask Server</h1>
+    
+    <h2>Step 1: Install Flask</h2>
+    <p>First, ensure you have Python installed. Then, you can install Flask using pip. Open your terminal or command prompt and run:</p>
+    <pre><code>pip install Flask python-dotenv flask-cors flask-talisman flask-wtf</code></pre>
+
+    <h2>Step 2: Create the Project Directory</h2>
+    <p>Create a directory for your Flask project:</p>
+    <pre><code>mkdir my_flask_app</code></pre>
+    <pre><code>cd my_flask_app</code></pre>
+
+    <h2>Step 3: Create the Flask Application</h2>
+    <p>Inside your project directory, create a new file called <code>app.py</code> and add the following code:</p>
+    <pre><code>import os
+import random
+import string
+import ssl
+from flask import Flask, request, jsonify, session
+from flask_cors import CORS
+from flask_talisman import Talisman
+from flask_wtf.csrf import CSRFProtect
+
+app = Flask(__name__)
+
+# Generate a random secret key
+app.config['SECRET_KEY'] = ''.join(random.choices(string.ascii_letters + string.digits, k=32))
+
+# Configure session cookie settings
+app.config['SESSION_COOKIE_HTTPONLY'] = True
+app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
+
+# CORS configuration
+CORS(app, origins=["https://your-frontend-domain.com"], supports_credentials=True)
+
+# Security headers
+Talisman(app)
+
+# CSRF protection
+csrf = CSRFProtect(app)
+
+# Middleware to generate session tokens
+@app.before_request
+def generate_session_token():
+    if 'token' not in session:
+        session['token'] = generate_session_token_value()
+
+def generate_session_token_value():
+    return ''.join(random.choices(string.ascii_letters + string.digits, k=32))
+
+# Route to get CSRF token
+@app.route('/csrf-token', methods=['GET'])
+def csrf_token():
+    return jsonify({'csrfToken': csrf.generate_csrf()}), 200
+
+# Example route to handle incoming data
+@app.route('/api/data', methods=['POST'])
+def handle_data():
+    input_data = request.json.get('inputData')
+    return jsonify({'message': 'Data received successfully'}), 200
+
+# SSL configuration
+ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLS)
+ssl_context.load_cert_chain('ssl/cert.pem', 'ssl/key.pem')
+
+if __name__ == '__main__':
+    port = int(os.getenv('PORT', 3000))
+    app.run(ssl_context=ssl_context, host='0.0.0.0', port=port)</code></pre>
+
+    <h2>Step 4: Create the SSL Certificates</h2>
+    <p>You need to have SSL certificates to run your server securely. Place your <code>cert.pem</code> and <code>key.pem</code> files in an <code>ssl</code> directory within your project folder.</p>
+
+    <h2>Step 5: Run the Flask Server</h2>
+    <p>Now, you can run your Flask application. In your terminal, ensure you are in the project directory and run:</p>
+    <pre><code>python app.py</code></pre>
+    <p>Your Flask server should now be running on <code>https://127.0.0.1:3000</code>. Open this URL in your web browser to access your API!</p>
+
+    <h2>Conclusion</h2>
+    <p>You have successfully set up a simple Flask server with CSRF protection, session management, and SSL. You can expand upon this basic setup to create more complex applications!</p>
+
+</body>
+</html>
