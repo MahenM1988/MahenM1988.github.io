@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Header Parser Microservice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        #headerOutput {
+            margin-top: 20px;
+            font-size: 18px;
+            white-space: pre-wrap;
+            text-align: left;
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Request Header Parser Microservice</h1>
+    <button id="parseHeaders">Parse Headers</button>
+    <div id="headerOutput"></div>
+
+    <script>
+        document.getElementById('parseHeaders').addEventListener('click', function() {
+            const headers = {
+                'User-Agent': navigator.userAgent,
+                'Accept-Language': navigator.language,
+                'Referer': document.referrer || 'None',
+                'Viewport Size': `${window.innerWidth} x ${window.innerHeight}`,
+                'Current URL': window.location.href
+            };
+
+            let output = '';
+            for (const [key, value] of Object.entries(headers)) {
+                output += `${key}: ${value}\n`;
+            }
+            document.getElementById('headerOutput').innerText = output;
+        });
+    </script>
+</body>
+</html>
