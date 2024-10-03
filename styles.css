@@ -18,6 +18,7 @@ body {
     padding: 20px; /* Add some padding for aesthetics */
     text-align: center; /* Center text in container */
     overflow: hidden; /* Prevent overflow */
+    max-height: calc(100vh - 60px); /* Adjust for footer */
 }
 
 /* Links Style */
