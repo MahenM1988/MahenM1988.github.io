@@ -6,44 +6,44 @@
     <title>Artificial Intelligence</title>
     <style>
         body {
-            background-color: black; /* Black background for terminal look */
+            background-color: black;
             color: #00FF00; /* Neon green text */
             font-family: 'Courier New', Courier, monospace;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            align-items: center; /* Centering elements */
             height: 100vh;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
         }
 
-        .container {
-            max-width: 1000px;
-            padding: 2rem;
-            background-color: rgba(0, 0, 0, 0.8); /* Dark semi-transparent */
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5); /* Neon green glow */
-            text-align: left; /* Left-aligning text inside container */
+        .main {
+            display: flex;
+            flex: 1; /* Take up remaining space */
         }
 
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: #00ff00; /* Neon magenta */
-            text-shadow: 0 0 10px rgba(255, 0, 255, 0.8);
-            text-align: center; /* Centering heading */
+        .sidebar {
+            width: 250px; /* Fixed width for the sidebar */
+            padding: 1rem; /* Reduced padding for space */
+            background-color: rgba(0, 0, 0, 0.8);
+            border-right: 3px solid #00FF00;
+            box-shadow: 2px 0 20px rgba(0, 255, 0, 0.5);
         }
 
-        h2 {
-            color: #ff4f4f; /* Neon red */
-            margin-top: 2rem;
+        .text-container {
+            flex-grow: 1; /* Take up remaining space */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem; /* Reduced padding */
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #00FF00; /* Neon green for text */
+            overflow: hidden; /* Prevent scrolling */
+            max-height: calc(100vh - 60px); /* Adjust for footer */
         }
 
-        p {
-            font-size: 1.2rem;
-            text-align: left; /* Ensuring paragraphs are left-aligned */
+        h1, h2, p {
+            color: #00FF00; /* Uniform green color for all text */
+            margin: 0.5rem 0; /* Consistent margin */
         }
 
         ul {
@@ -52,7 +52,7 @@
         }
 
         li {
-            margin: 1rem 0;
+            margin: 0.5rem 0; /* Consistent spacing for list items */
         }
 
         a {
@@ -64,106 +64,103 @@
         footer {
             text-align: center;
             padding: 1rem 0;
-            background-color: rgba(0, 0, 0, 0.8); /* Dark semi-transparent footer */
-            border-top: 3px solid #00FF00; /* Neon green border */
-        }
-
-        footer p {
-            color: #00FF00;
-        }
-
-        .text-container {
-            display: none; /* Initially hidden */
-            text-align: center; /* Centering text in container */
+            background-color: rgba(0, 0, 0, 0.8);
+            border-top: 3px solid #00FF00;
+            flex-shrink: 0; /* Prevent footer from shrinking */
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Artificial Intelligence</h1>
-        
+    <div class="main">
+        <div class="sidebar">
+            <h1>Artificial Intelligence</h1>
+            <h2>Labeled Data</h2>
+            <ul>
+                <li><a href="https://colab.research.google.com/drive/1SEWvpIefALyBJCdAE9kDLhuW6NTCyyr1" target="_blank">Linear Regression</a></li>
+                <li><a href="https://colab.research.google.com/drive/1PUhVjE_GMxcyrhnFmdhQJd87QLZvUQms" target="_blank">Logistic Regression</a></li>
+                <li><a href="https://colab.research.google.com/drive/1d5CixvihePFUalp_XF8GQ1wMwtfU_VxR" target="_blank">Support Vector Machines</a></li>  
+                <li><a href="https://colab.research.google.com/drive/1I0W-xPqi9JkckX6I6yLuDVM4haFrrDDA" target="_blank">Decision Trees</a></li>
+                <li><a href="https://colab.research.google.com/drive/1D3wK3Z1FP-jnW_LYcpFOpI6DUQaOQvp_" target="_blank">Random Forests</a></li>
+            </ul>
+            
+            <h2>Unlabeled Data</h2>
+            <ul>
+                <li><a href="https://colab.research.google.com/drive/10Di7HFIjOHn81j9Z2JNV9mO8upayJJU4" target="_blank">K-Means Clustering</a></li>
+                <li><a href="https://colab.research.google.com/drive/1PKP1UeoTRZRWASS598lqaggQWFqdd8eZ" target="_blank">Hierarchical Clustering</a></li>
+                <li><a href="https://colab.research.google.com/drive/1gZKePqUz26RDli3-SLRxqqTS3Vww0WGP" target="_blank">Principal Component Analysis</a></li>
+            </ul>  
+
+            <h2>Other</h2>
+            <ul> 
+                <li><a href="https://colab.research.google.com/drive/118JMbgn8DEJRIJ09KoSTGsoS_cIE1yH_" target="_blank">Gradient Boosting</a></li>
+                <li><a href="https://colab.research.google.com/drive/1QKlRcbCUu-Z8KjHwEMm7UqH5uSrM5zJ6" target="_blank">Hidden Markov Models</a></li>
+                <li><a href="https://colab.research.google.com/drive/1MR7TfuiUaoAZBxDdp77faM2fd6E6dohc" target="_blank">K-Nearest Neighbors</a></li>
+                <li><a href="https://colab.research.google.com/drive/1-roXfp3tMxaylWIZWeknrwHpfk2GTIXh" target="_blank">Naive Bayes</a></li>
+            </ul>
+
+            <h2>Machine Learning</h2>
+            <ul>
+                <li><a href="https://mahenm1988.github.io/Artificial Intelligence/Tensor Flow/index.html" target="_blank">Machine Learning with TensorFlow</a></li>
+            </ul>  
+        </div>
+
         <div class="text-container" id="textContainer"></div>
-        
-        <h2>Labeled Data</h2>
-        <ul>
-            <li><a href="https://drive.google.com/file/d/1SEWvpIefALyBJCdAE9kDLhuW6NTCyyr1/view?usp=sharing" target="_blank">Linear Regression</a></li>
-            <li><a href="https://drive.google.com/file/d/1PUhVjE_GMxcyrhnFmdhQJd87QLZvUQms/view?usp=sharing" target="_blank">Logistic Regression</a></li>
-            <li><a href="https://drive.google.com/file/d/1d5CixvihePFUalp_XF8GQ1wMwtfU_VxR/view?usp=sharing" target="_blank">Support Vector Machines</a></li>  
-            <li><a href="https://drive.google.com/file/d/1I0W-xPqi9JkckX6I6yLuDVM4haFrrDDA/view?usp=sharing" target="_blank">Decision Trees</a></li>
-            <li><a href="https://drive.google.com/file/d/1D3wK3Z1FP-jnW_LYcpFOpI6DUQaOQvp_/view?usp=sharing" target="_blank">Random Forests</a></li>
-        </ul>
-        
-        <h2>Unlabeled Data</h2>
-        <ul>
-            <li><a href="https://drive.google.com/file/d/10Di7HFIjOHn81j9Z2JNV9mO8upayJJU4/view?usp=sharing" target="_blank">K-Means Clustering</a></li>
-            <li><a href="https://drive.google.com/file/d/1PKP1UeoTRZRWASS598lqaggQWFqdd8eZ/view?usp=sharing" target="_blank">Hierarchical Clustering</a></li>
-            <li><a href="https://drive.google.com/file/d/1gZKePqUz26RDli3-SLRxqqTS3Vww0WGP/view?usp=drive_link" target="_blank">Principal Component Analysis</a></li>
-        </ul>  
-
-        <h2>Other</h2>
-        <ul> 
-            <li><a href="https://drive.google.com/file/d/118JMbgn8DEJRIJ09KoSTGsoS_cIE1yH_/view?usp=sharing" target="_blank">Gradient Boosting</a></li>
-            <li><a href="https://drive.google.com/file/d/1QKlRcbCUu-Z8KjHwEMm7UqH5uSrM5zJ6/view?usp=sharing" target="_blank">Hidden Markov Models</a></li>
-            <li><a href="https://drive.google.com/file/d/1MR7TfuiUaoAZBxDdp77faM2fd6E6dohc/view?usp=sharing" target="_blank">K-Nearest Neighbors</a></li>
-            <li><a href="https://drive.google.com/file/d/1-roXfp3tMxaylWIZWeknrwHpfk2GTIXh/view?usp=sharing" target="_blank">Naive Bayes</a></li>
-        </ul>
-
-        <h2>Machine Learning</h2>
-        <ul>
-            <li><a href="https://mahenm1988.github.io/Artificial Intelligence/Tensor Flow/index.html" target="_blank">Machine Learning with TensorFlow</a></li>
-        </ul>  
     </div>
+
     <footer>
         <p>© Mahen Mahindaratne 2024</p>
     </footer>
 
     <script>
-    const lines = [
-        "Enriching the learning experience is key to developing effective AI models. There are two types of data.",
-        "Labeled Data, which attributes labels to each data point within the dataset, and Unlabeled Data, which has no labels associated with the data points.",
-        "The way labeled data is processed can vary depending on the dataset.",
-        "When the relationship between the X and Y variables is linear, Linear Regression is best to predict a given outcome. When the prediction needs to be a class category or label rather than a value, Logistic Regression can be used. When dealing with non-linear data or improving a linear dataset, Support Vector Machines (SVM) can be employed to add an extra dimension. Decision Trees follow a defined path when processing a dataset. Random Forests can take a Decision Tree and randomize the branches for a more diverse learning experience.",
-        "K-Means Clustering uses the K-Means algorithm to identify a predefined number of clusters in a dataset, identifying centroids within each cluster. Hierarchical Clustering does not have a predefined number of clusters but evaluates the data based on its size, identifying clusters and centroids. When dealing with non-linear data that can be interpreted in various ways, Principal Component Analysis (PCA) helps identify what is relevant for interpretation.",
-        "Gradient Boosting can enhance the performance of models, particularly with non-linear data. If all we have are observations of events with hidden states and a defined set of probabilities, a Hidden Markov Model can be used. K-Nearest Neighbors (KNN) can predict outcomes based on how the data points relate to each other within the dataset. A Naive Bayes Classifier uses Bayes' theorem to classify data into two or more labels."
-    ];
+        const lines = [
+            "Enriching the learning experience is key to developing effective AI models. There are two types of data.",
+            "Labeled Data, which attributes labels to each data point within the dataset, and Unlabeled Data, which has no labels associated with the data points.",
+            "The way labeled data is processed can vary depending on the dataset.",
+            "When the relationship between the X and Y variables is linear, Linear Regression is best to predict a given outcome. When the prediction needs to be a class category or label rather than a value, Logistic Regression can be used. When dealing with non-linear data or improving a linear dataset, Support Vector Machines (SVM) can be employed to add an extra dimension. Decision Trees follow a defined path when processing a dataset. Random Forests can take a Decision Tree and randomize the branches for a more diverse learning experience.",
+            "K-Means Clustering uses the K-Means algorithm to identify a predefined number of clusters in a dataset, identifying centroids within each cluster. Hierarchical Clustering does not have a predefined number of clusters but evaluates the data based on its size, identifying clusters and centroids. When dealing with non-linear data that can be interpreted in various ways, Principal Component Analysis (PCA) helps identify what is relevant for interpretation.",
+            "Gradient Boosting can enhance the performance of models, particularly with non-linear data. If all we have are observations of events with hidden states and a defined set of probabilities, a Hidden Markov Model can be used. K-Nearest Neighbors (KNN) can predict outcomes based on how the data points relate to each other within the dataset. A Naive Bayes Classifier uses Bayes' theorem to classify data into two or more labels."
+        ];
 
-    let lineIndex = 0;
-    let charIndex = 0;
+        let lineIndex = 0;
+        let charIndex = 0;
 
-    function typeCharacter() {
-        const textContainer = document.getElementById('textContainer');
+        function typeCharacter() {
+            const textContainer = document.getElementById('textContainer');
 
-        if (lineIndex === 0 && charIndex === 0) {
-            textContainer.style.display = 'block'; // Show the text container
-        }
-
-        if (lineIndex < lines.length) {
-            const currentLine = lines[lineIndex];
-
-            if (charIndex === 0) {
-                textContainer.innerHTML += "<p></p>"; // Add a new paragraph
+            // Show the text container when typing starts
+            if (lineIndex === 0 && charIndex === 0) {
+                textContainer.style.display = 'block';
             }
 
-            const paragraph = textContainer.lastElementChild;
+            if (lineIndex < lines.length) {
+                const currentLine = lines[lineIndex];
 
-            if (charIndex < currentLine.length) {
-                paragraph.textContent += currentLine.charAt(charIndex);
-                charIndex++;
-                setTimeout(typeCharacter, 50); // Type next character
+                // Add a new paragraph if starting a new line
+                if (charIndex === 0) {
+                    textContainer.innerHTML += "<p></p>";
+                }
+
+                const paragraph = textContainer.lastElementChild;
+
+                // Type out the characters
+                if (charIndex < currentLine.length) {
+                    paragraph.textContent += currentLine.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(typeCharacter, 50); // Type next character
+                } else {
+                    lineIndex++;
+                    charIndex = 0;
+                    setTimeout(typeCharacter, 500); // Wait before next line
+                }
             } else {
-                lineIndex++;
-                charIndex = 0;
-                setTimeout(typeCharacter, 500); // Wait before next line
+                // Animation complete; keep the text displayed
+                textContainer.style.display = 'block'; // Ensure it stays visible
             }
-        } else {
-            // Animation complete; keep the text displayed
-            textContainer.style.display = 'block'; // Ensure it stays visible
         }
-    }
 
-    window.onload = () => {
-        typeCharacter(); // Start typing after the entire page is loaded
-    };
+        window.onload = () => {
+            typeCharacter(); // Start typing after the entire page is loaded
+        };
     </script>
 </body>
 </html>
