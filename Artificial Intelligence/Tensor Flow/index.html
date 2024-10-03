@@ -6,44 +6,44 @@
     <title>Tensor Flow</title>
     <style>
         body {
-            background-color: black; /* Black background for terminal look */
+            background-color: black;
             color: #00FF00; /* Neon green text */
             font-family: 'Courier New', Courier, monospace;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            align-items: center; /* Centering elements */
             height: 100vh;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
         }
 
-        .container {
-            max-width: 1000px;
-            padding: 2rem;
-            background-color: rgba(0, 0, 0, 0.8); /* Dark semi-transparent */
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5); /* Neon green glow */
-            text-align: left; /* Left-aligning text inside container */
+        .main {
+            display: flex;
+            flex: 1; /* Take up remaining space */
         }
 
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: #00ff00; /* Neon magenta */
-            text-shadow: 0 0 10px rgba(255, 0, 255, 0.8);
-            text-align: center; /* Centering heading */
+        .sidebar {
+            width: 250px; /* Fixed width for the sidebar */
+            padding: 1rem; /* Padding for space */
+            background-color: rgba(0, 0, 0, 0.8);
+            border-right: 3px solid #00FF00;
+            box-shadow: 2px 0 20px rgba(0, 255, 0, 0.5);
         }
 
-        h2 {
-            color: #ff4f4f; /* Neon red */
-            margin-top: 2rem;
+        .text-container {
+            flex-grow: 1; /* Take up remaining space */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem; /* Padding */
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #00FF00; /* Neon green for text */
+            overflow: hidden; /* Prevent scrolling */
+            max-height: calc(100vh - 60px); /* Adjust for footer */
         }
 
-        p {
-            font-size: 1.2rem;
-            text-align: left; /* Ensuring paragraphs are left-aligned */
+        h1, h2, p {
+            color: #00FF00; /* Uniform green color for all text */
+            margin: 0.5rem 0; /* Consistent margin */
         }
 
         ul {
@@ -52,7 +52,7 @@
         }
 
         li {
-            margin: 1rem 0;
+            margin: 0.5rem 0; /* Consistent spacing for list items */
         }
 
         a {
@@ -64,81 +64,80 @@
         footer {
             text-align: center;
             padding: 1rem 0;
-            background-color: rgba(0, 0, 0, 0.8); /* Dark semi-transparent footer */
-            border-top: 3px solid #00FF00; /* Neon green border */
-        }
-
-        footer p {
-            color: #00FF00;
-        }
-
-        .text-container {
-            display: none; /* Initially hidden */
-            text-align: center; /* Centering text in container */
+            background-color: rgba(0, 0, 0, 0.8);
+            border-top: 3px solid #00FF00;
+            flex-shrink: 0; /* Prevent footer from shrinking */
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Tensor Flow</h1>
-          <div class="text-container" id="textContainer"></div>
-            <h2>Links to Google Colab Note Books</h2>
-              <ul>
-                <li><a href="https://drive.google.com/file/d/1UoP0rdmMWWqFRW0lGQ8Wtx8v7Qs2fg27/view?usp=sharing" target="_blank">Neural Networks in TensorFlow</a></li>
-                <li><a href="https://drive.google.com/file/d/12NIG3Zga6EI2Jf2H9Sx4kk9F5wJY57F_/view?usp=sharing" target="_blank">Convolutional Neural Networks</a></li>
-                <li><a href="https://drive.google.com/file/d/19T0xsXjOHYh5nNItdoIO8X_asB7Lu-1q/view?usp=sharing" target="_blank">Natural Language Processing with a Recurrent Neural Network</a></li>
-                <li><a href="https://drive.google.com/file/d/1MM9DGQAZXJvDamljbqiDsqeM973avrB3/view?usp=sharing" target="_blank">Reinforcement Learning with Q-Learning</a></li>
-              </ul>
+    <div class="main">
+        <div class="sidebar">
+            <h1>Tensor Flow</h1>
+            <ul>
+                <li><a href="https://colab.research.google.com/drive/1UoP0rdmMWWqFRW0lGQ8Wtx8v7Qs2fg27" target="_blank">Neural Networks in TensorFlow</a></li>
+                <li><a href="https://colab.research.google.com/drive/12NIG3Zga6EI2Jf2H9Sx4kk9F5wJY57F_" target="_blank">Convolutional Neural Networks</a></li>
+                <li><a href="https://colab.research.google.com/drive/19T0xsXjOHYh5nNItdoIO8X_asB7Lu-1q" target="_blank">Natural Language Processing with a Recurrent Neural Network</a></li>
+                <li><a href="https://colab.research.google.com/drive/1MM9DGQAZXJvDamljbqiDsqeM973avrB3" target="_blank">Reinforcement Learning with Q-Learning</a></li>
+            </ul>
+        </div>
+
+        <div class="text-container" id="textContainer"></div>
     </div>
-  <footer>
-    <p>© Mahen Mahindaratne 2024</p>
-  </footer>
-</body>
+
+    <footer>
+        <p>© Mahen Mahindaratne 2024</p>
+    </footer>
+
     <script>
-    const lines = [
-        "TensorFlow is a Python library that can be used to build and train machine learning models. Keras in TensorFlow acts as a high-level interface between your code, data, and TensorFlow.",
-        "A neural network is comprised of an input layer and an output layer. In between, there can be one or more hidden layers that process and optimize the data for the intended use.",
-        "A convolutional neural network (CNN), commonly used for image data, has multiple layers that contribute to how the data is evaluated, adding depth and variety to the analysis.",
-        "Natural language processing (NLP), using a recurrent neural network (RNN), utilizes tokens to attribute value to text data.",
-        "Reinforcement learning with Q-learning employs the Q-learning algorithm to reward or penalize an agent navigating a given environment, enabling it to learn how to move from point A to point B."
+        const lines = [
+            "TensorFlow is a Python library that can be used to build and train machine learning models. Keras in TensorFlow acts as a high-level interface between your code, data, and TensorFlow.",
+            "A neural network is comprised of an input layer and an output layer. In between, there can be one or more hidden layers that process and optimize the data for the intended use.",
+            "A convolutional neural network (CNN), commonly used for image data, has multiple layers that contribute to how the data is evaluated, adding depth and variety to the analysis.",
+            "Natural language processing (NLP), using a recurrent neural network (RNN), utilizes tokens to attribute value to text data.",
+            "Reinforcement learning with Q-learning employs the Q-learning algorithm to reward or penalize an agent navigating a given environment, enabling it to learn how to move from point A to point B."
         ];
 
-    let lineIndex = 0;
-    let charIndex = 0;
+        let lineIndex = 0;
+        let charIndex = 0;
 
-    function typeCharacter() {
-        const textContainer = document.getElementById('textContainer');
+        function typeCharacter() {
+            const textContainer = document.getElementById('textContainer');
 
-        if (lineIndex === 0 && charIndex === 0) {
-            textContainer.style.display = 'block'; // Show the text container
-        }
-
-        if (lineIndex < lines.length) {
-            const currentLine = lines[lineIndex];
-
-            if (charIndex === 0) {
-                textContainer.innerHTML += "<p></p>"; // Add a new paragraph
+            // Show the text container when typing starts
+            if (lineIndex === 0 && charIndex === 0) {
+                textContainer.style.display = 'block';
             }
 
-            const paragraph = textContainer.lastElementChild;
+            if (lineIndex < lines.length) {
+                const currentLine = lines[lineIndex];
 
-            if (charIndex < currentLine.length) {
-                paragraph.textContent += currentLine.charAt(charIndex);
-                charIndex++;
-                setTimeout(typeCharacter, 50); // Type next character
+                // Add a new paragraph if starting a new line
+                if (charIndex === 0) {
+                    textContainer.innerHTML += "<p></p>";
+                }
+
+                const paragraph = textContainer.lastElementChild;
+
+                // Type out the characters
+                if (charIndex < currentLine.length) {
+                    paragraph.textContent += currentLine.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(typeCharacter, 50); // Type next character
+                } else {
+                    lineIndex++;
+                    charIndex = 0;
+                    setTimeout(typeCharacter, 500); // Wait before next line
+                }
             } else {
-                lineIndex++;
-                charIndex = 0;
-                setTimeout(typeCharacter, 500); // Wait before next line
+                // Animation complete; keep the text displayed
+                textContainer.style.display = 'block'; // Ensure it stays visible
             }
-        } else {
-            // Animation complete; keep the text displayed
-            textContainer.style.display = 'block'; // Ensure it stays visible
         }
-    }
 
-    window.onload = () => {
-        typeCharacter(); // Start typing after the entire page is loaded
-    };
+        window.onload = () => {
+            typeCharacter(); // Start typing after the entire page is loaded
+        };
     </script>
+</body>
 </html>
