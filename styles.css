@@ -4,18 +4,29 @@ body {
     color: #00FF00;
     font-family: 'Courier New', Courier, monospace;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    flex-direction: column; /* Stack content vertically */
+    height: 100vh; /* Full viewport height */
     margin: 0;
-    overflow: hidden;
 }
 
+/* Main container */
 .container {
-    padding: 20px;
-    max-width: 800px;
-    margin: auto;
+    display: flex;
+    flex-direction: column; /* Keep content stacked */
+    flex-grow: 1; /* Allow the container to grow and fill space */
+    justify-content: center; /* Center content vertically */
+    padding: 20px; /* Add some padding for aesthetics */
     text-align: center; /* Center text in container */
+    overflow: hidden; /* Prevent overflow */
+}
+
+/* Links Style */
+.container .links {
+    display: flex;
+    flex-direction: column; /* Stack the elements vertically */
+    flex-grow: 1; /* Allow links to grow and take available space */
+    margin: 0; /* Remove auto margin */
+    text-align: justify; /* Align text to the left */
 }
 
 /* Headings */
@@ -45,40 +56,8 @@ li {
     margin: 5px 0; /* Space between list items */
 }
 
-/* Code Blocks */
-pre {
-    background-color: #333;
-    padding: 10px;
-    border-radius: 5px;
-    overflow-x: auto;
-}
-
-code {
-    color: #00FF00;
-}
-
-/* Table Styles */
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th, td {
-    border: 1px solid #00FF00;
-    padding: 10px;
-    text-align: left;
-}
-
-th {
-    background-color: #444;
-}
-
 /* Footer */
 footer {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
     text-align: center;
     padding: 10px 0;
     font-size: 0.8em;
@@ -103,4 +82,14 @@ footer {
 
 .links li {
     margin: 10px 0; /* Space between links */
+}
+
+@keyframes flash {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.ai {
+    animation: flash 2s infinite; /* Adjust the duration as needed */
 }
