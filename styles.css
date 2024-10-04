@@ -68,7 +68,6 @@ li {
 /* Footer */
 footer {
     text-align: center;
-    font-size: 0.8em;
     position: relative; /* Allow footer to be positioned */
     bottom: 0; /* Stick to bottom */
 }
