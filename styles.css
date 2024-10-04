@@ -18,7 +18,6 @@ body {
     padding: 20px; /* Add some padding for aesthetics */
     text-align: center; /* Center text in container */
     overflow: hidden; /* Prevent overflow */
-    max-height: calc(100vh - 60px); /* Adjust for footer */
 }
 
 /* Links Style */
@@ -28,6 +27,14 @@ body {
     flex-grow: 1; /* Allow links to grow and take available space */
     margin: 0; /* Remove auto margin */
     text-align: justify; /* Align text to the left */
+    overflow-y: auto; /* Allow scrolling if content exceeds */
+}
+
+/* Ensure the list doesn't cause overflow */
+.links ul {
+    max-height: calc(100vh - 200px); /* Adjust based on footer height and message size */
+    overflow-y: auto; /* Allow scrolling if content exceeds max-height */
+    padding: 0; /* Remove padding */
 }
 
 /* Headings */
@@ -50,11 +57,11 @@ a:hover {
 /* Lists */
 ul {
     list-style-type: none;
-    padding-left: 0;
+    padding-left: 0; /* Remove left padding */
 }
 
 li {
-    margin: 5px 0; /* Space between list items */
+    margin: 10px 0; /* Space between list items */
 }
 
 /* Footer */
@@ -78,15 +85,13 @@ footer {
     margin-top: 20px;
 }
 
-.links ul {
-    list-style-type: none; /* Remove bullet points */
-    padding: 0; /* Remove padding */
+.centered-links {
+    display: flex;
+    flex-direction: column; /* Stack links vertically */
+    align-items: center; /* Center items */
 }
 
-.links li {
-    margin: 10px 0; /* Space between links */
-}
-
+/* Animation */
 @keyframes flash {
     0% { opacity: 1; }
     50% { opacity: 0; }
