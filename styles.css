@@ -7,6 +7,7 @@ body {
     flex-direction: column; /* Stack content vertically */
     height: 100vh; /* Full viewport height */
     margin: 0;
+    overflow: hidden; /* Prevent scrollbar on body */
 }
 
 /* Main container */
@@ -27,11 +28,13 @@ body {
     flex-grow: 1; /* Allow links to grow and take available space */
     margin: 0; /* Remove auto margin */
     text-align: justify; /* Align text to the left */
+    overflow: hidden; /* Prevent overflow */
 }
 
-/* Ensure the list doesn't cause overflow */
+/* Ensure the list fits without causing overflow */
 .links ul {
     max-height: calc(100vh - 200px); /* Adjust based on footer height and message size */
+    overflow: hidden; /* Prevent scrollbars */
     padding: 0; /* Remove padding */
 }
 
