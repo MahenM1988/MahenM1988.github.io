@@ -32,7 +32,6 @@ body {
 /* Ensure the list doesn't cause overflow */
 .links ul {
     max-height: calc(100vh - 200px); /* Adjust based on footer height and message size */
-    overflow-y: auto; /* Allow scrolling if content exceeds max-height */
     padding: 0; /* Remove padding */
 }
 
