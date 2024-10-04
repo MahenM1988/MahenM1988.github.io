@@ -7,7 +7,6 @@ body {
     flex-direction: column; /* Stack content vertically */
     height: 100vh; /* Full viewport height */
     margin: 0;
-    overflow: hidden; /* Prevent scrollbar on body */
 }
 
 /* Main container */
@@ -19,6 +18,7 @@ body {
     padding: 20px; /* Add some padding for aesthetics */
     text-align: center; /* Center text in container */
     overflow: hidden; /* Prevent overflow */
+    max-height: calc(100vh - 60px); /* Adjust for footer */
 }
 
 /* Links Style */
@@ -28,14 +28,6 @@ body {
     flex-grow: 1; /* Allow links to grow and take available space */
     margin: 0; /* Remove auto margin */
     text-align: justify; /* Align text to the left */
-    overflow: hidden; /* Prevent overflow */
-}
-
-/* Ensure the list fits without causing overflow */
-.links ul {
-    max-height: calc(100vh - 200px); /* Adjust based on footer height and message size */
-    overflow: hidden; /* Prevent scrollbars */
-    padding: 0; /* Remove padding */
 }
 
 /* Headings */
@@ -58,17 +50,18 @@ a:hover {
 /* Lists */
 ul {
     list-style-type: none;
-    padding-left: 0; /* Remove left padding */
+    padding-left: 0;
 }
 
 li {
-    margin: 10px 0; /* Space between list items */
+    margin: 5px 0; /* Space between list items */
 }
 
 /* Footer */
 footer {
     text-align: center;
-    position: relative; /* Allow footer to be positioned */
+    padding: 10px 0;
+    font-size: 0.8em;
 }
 
 /* Additional Styles for Message and Links */
@@ -83,13 +76,15 @@ footer {
     margin-top: 20px;
 }
 
-.centered-links {
-    display: flex;
-    flex-direction: column; /* Stack links vertically */
-    align-items: center; /* Center items */
+.links ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
 }
 
-/* Animation */
+.links li {
+    margin: 10px 0; /* Space between links */
+}
+
 @keyframes flash {
     0% { opacity: 1; }
     50% { opacity: 0; }
