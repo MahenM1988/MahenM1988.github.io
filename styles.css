@@ -27,7 +27,6 @@ body {
     flex-grow: 1; /* Allow links to grow and take available space */
     margin: 0; /* Remove auto margin */
     text-align: justify; /* Align text to the left */
-    overflow: hidden; /* Prevent overflow */
 }
 
 /* Ensure the list doesn't cause overflow */
