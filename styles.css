@@ -27,7 +27,8 @@ body {
     flex-direction: column; /* Stack the elements vertically */
     flex-grow: 1; /* Allow links to grow and take available space */
     margin: 0; /* Remove auto margin */
-    text-align: justify; /* Align text to the left */
+    justify-content: center; /* Center content vertically */
+    text-align: center; /* Align text to the left */
 }
 
 /* Tile Container */
@@ -52,7 +53,6 @@ body {
 
 .tile:hover {
     transform: scale(1.05); /* Scale effect on hover */
-    background-color: #00CC00; /* Change background color on hover */
 }
 
 /* Centered Links */
