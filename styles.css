@@ -39,8 +39,9 @@ body {
 
 /* Tiles */
 .tile {
-    background-color: #00CC00;
-    color: black;
+    background-color: black; /* Black background */
+    color: #00FF00; /* Green text */
+    border: 2px solid #00FF00; /* Green border */
     padding: 15px;
     margin: 10px;
     border-radius: 8px;
@@ -51,7 +52,7 @@ body {
 
 .tile:hover {
     transform: scale(1.05); /* Scale effect on hover */
-    background-color: #00FF00; /* Change background color on hover */
+    background-color: #00CC00; /* Change background color on hover */
 }
 
 /* Centered Links */
