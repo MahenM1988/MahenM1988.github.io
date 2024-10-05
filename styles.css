@@ -22,6 +22,14 @@ body {
     height: calc(100vh - 60px); /* Adjust height for footer */
 }
 
+/* Adjust for centered alignment */
+.container > * {
+    flex-grow: 1; /* Allow child elements to grow and fill available space */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
 /* Links Style */
 .container .links {
     display: flex;
