@@ -70,6 +70,8 @@ a {
     color: #00FF00;
     text-decoration: none;
     transition: color 0.3s ease; /* Smooth color transition */
+    aligh-self: center;
+    aligh-items: center;
 }
 
 a:hover {
