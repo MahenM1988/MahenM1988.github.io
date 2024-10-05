@@ -30,6 +30,35 @@ body {
     text-align: justify; /* Align text to the left */
 }
 
+/* Tile Container */
+.tile-container {
+    display: flex;
+    flex-direction: column; /* Stack tiles vertically */
+    align-items: center; /* Center tiles horizontally */
+}
+
+/* Tiles */
+.tile {
+    background-color: #00CC00;
+    color: black;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 8px;
+    width: 80%; /* Set a fixed width */
+    cursor: pointer; /* Pointer on hover */
+    transition: transform 0.3s, background-color 0.3s; /* Animation effects */
+}
+
+.tile:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+    background-color: #00FF00; /* Change background color on hover */
+}
+
+/* Centered Links */
+.center-links p {
+    margin: 10px 0; /* Space between links */
+}
+
 /* Headings */
 h1, h2, h3 {
     color: #00FF00;
@@ -47,16 +76,6 @@ a:hover {
     text-decoration: underline; /* Underline on hover */
 }
 
-/* Lists */
-ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-li {
-    margin: 5px 0; /* Space between list items */
-}
-
 /* Footer */
 footer {
     text-align: center;
@@ -69,20 +88,6 @@ footer {
     font-size: 2em;
     opacity: 1;
     transition: opacity 1s ease;
-}
-
-.links {
-    font-size: 1.5em;
-    margin-top: 20px;
-}
-
-.links ul {
-    list-style-type: none; /* Remove bullet points */
-    padding: 0; /* Remove padding */
-}
-
-.links li {
-    margin: 10px 0; /* Space between links */
 }
 
 @keyframes flash {
