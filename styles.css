@@ -12,14 +12,14 @@ body {
 /* Main container */
 .container {
     display: flex;
-    flex-direction: column; /* Keep content stacked */
+    flex-direction: column; /* Stack content vertically */
     flex-grow: 1; /* Allow the container to grow and fill space */
     justify-content: center; /* Center content vertically */
     align-items: center; /* Center items horizontally */
     padding: 20px; /* Add some padding for aesthetics */
     text-align: center; /* Center text in container */
     overflow: hidden; /* Prevent overflow */
-    height: 100%; /* Fill the full height of the viewport */
+    height: calc(100vh - 60px); /* Adjust height for footer */
 }
 
 /* Links Style */
