@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Managing Repositories with Command Prompt and GitHub</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9; /* Light pastel background */
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            background-color: #ffffff; /* White container */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: #ff6f61; /* Pastel coral for headings */
+        }
+
+        p {
+            font-size: 1rem;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 1rem 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #6a5acd; /* Pastel slate blue */
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #ffb347; /* Pastel orange */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th, td {
+            border: 1px solid #e0e0e0;
+            padding: 0.5rem;
+            text-align: left;
+        }
+
+        th {
+            background-color: #ffb347; /* Light pastel orange */
+            color: #fff;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1rem 0;
+            background-color: #e0f7fa; /* Light pastel blue */
+            border-top: 2px solid #ff6f61; /* Coral border */
+        }
+
+        footer p {
+            color: #333;
+        }
+
+        code {
+            background-color: #f0f0f0;
+            padding: 0.2rem 0.4rem;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Managing Repositories with Command Prompt and GitHub</h1>
+
+        <p>Using the command prompt to manage your GitHub repositories can greatly enhance your productivity and streamline your development workflow. In this post, we'll explore how to create, update, edit, and remove repositories, directories, and files using the command prompt.</p>
+
+        <h2>Setting Up Git</h2>
+        <p>Before diving in, ensure you have Git installed on your system. You can download it from <a href="https://git-scm.com/downloads">git-scm.com</a>. Once installed, configure your Git environment with your username and email:</p>
+        <pre><code>git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"</code></pre>
+
+        <h2>Creating a New Repository</h2>
+        <p>To create a new repository, use the following commands:</p>
+        <pre><code>mkdir my-repo
+cd my-repo
+git init</code></pre>
+        <p>This creates a new directory called <code>my-repo</code> and initializes it as a Git repository.</p>
+
+        <h2>Connecting to GitHub</h2>
+        <p>Next, link your local repository to a GitHub repository. First, create a new repository on GitHub, then run:</p>
+        <pre><code>git remote add origin https://github.com/yourusername/my-repo.git</code></pre>
+
+        <h2>Adding Files</h2>
+        <p>To add files to your repository, create a new file and use Git commands to track it:</p>
+        <pre><code>echo "Hello, World!" > README.md
+git add README.md</code></pre>
+        <p>Commit the changes with a message:</p>
+        <pre><code>git commit -m "Add README file"</code></pre>
+
+        <h2>Updating Files</h2>
+        <p>To update a file, simply edit it and then stage the changes:</p>
+        <pre><code>echo "Updated content" >> README.md
+git add README.md
+git commit -m "Update README file"</code></pre>
+
+        <h2>Removing Files</h2>
+        <p>If you need to remove a file, use:</p>
+        <pre><code>git rm README.md
+git commit -m "Remove README file"</code></pre>
+
+        <h2>Pushing Changes to GitHub</h2>
+        <p>After making local changes, push them to GitHub:</p>
+        <pre><code>git push -u origin master</code></pre>
+
+        <h2>Cloning a Repository</h2>
+        <p>If you want to clone an existing GitHub repository, use:</p>
+        <pre><code>git clone https://github.com/yourusername/my-repo.git</code></pre>
+
+        <h2>Conclusion</h2>
+        <p>Managing your GitHub repositories through the command prompt is a powerful way to enhance your workflow. By mastering these commands, you can efficiently create, update, edit, and remove files and repositories. Happy coding!</p>
+        
+    </div>
+
+    <footer>
+        <p>© Mahen Mahindaratne 2024</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core Modules in Node.js</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9; /* Light pastel background */
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            background-color: #ffffff; /* White container */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: #ff6f61; /* Pastel coral for headings */
+        }
+
+        p {
+            font-size: 1rem;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 1rem 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #6a5acd; /* Pastel slate blue */
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #ffb347; /* Pastel orange */
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1rem 0;
+            background-color: #e0f7fa; /* Light pastel blue */
+            border-top: 2px solid #ff6f61; /* Coral border */
+        }
+
+        footer p {
+            color: #333;
+        }
+
+        code {
+            background-color: #f0f0f0;
+            padding: 0.2rem 0.4rem;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Core Modules in Node.js</h1>
+
+        <p>Node.js provides a rich set of built-in modules that make it easier to perform common tasks in server-side development. Understanding these core modules is essential for building robust applications. In this post, we'll explore some of the most important core modules in Node.js.</p>
+
+        <h2>HTTP (Hypertext Transfer Protocol)</h2>
+        <p>In Node.js, you don't directly interact with the HTTP protocol itself, but you leverage modules that handle HTTP communication for you. The built-in <code>http</code> module allows you to create server applications and handle HTTP requests and responses effortlessly.</p>
+
+        <h3>Basic Example:</h3>
+        <pre><code>const http = require('http');
+
+const server = http.createServer((req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('Hello World\n');
+});
+
+server.listen(3000, () => {
+    console.log('Server running at http://localhost:3000/');
+});</code></pre>
+
+        <h2>File System Module</h2>
+        <p>The <strong>File System Module</strong> is a built-in module that provides a way for your Node.js applications to interact with the file system on the server. This module allows you to read, write, update, and delete files with ease.</p>
+
+        <h3>Basic File Operations:</h3>
+        <pre><code>const fs = require('fs');
+
+// Reading a file
+fs.readFile('example.txt', 'utf8', (err, data) => {
+    if (err) throw err;
+    console.log(data);
+});
+
+// Writing to a file
+fs.writeFile('output.txt', 'Hello Node.js', (err) => {
+    if (err) throw err;
+    console.log('File written successfully!');
+});</code></pre>
+
+        <h2>Express.js (Web Framework for Node.js)</h2>
+        <p><strong>Express.js</strong> is a popular and lightweight framework built on top of Node.js that simplifies the development of web applications and APIs. It offers a structured approach to handling incoming requests and generating responses.</p>
+
+        <h3>Key Features:</h3>
+        <ul>
+            <li><strong>Routing:</strong> Matches incoming requests (based on URL and HTTP method) to specific handler functions that process them.</li>
+            <li><strong>Middleware:</strong> Functions that execute before or after route handlers, allowing for common tasks like logging, authentication, or data validation.</li>
+            <li><strong>Templating:</strong> Tools to generate dynamic HTML content on the server-side based on data. Popular options include Handlebars, Pug, and EJS.</li>
+            <li><strong>Static File Serving:</strong> Efficiently delivers static content like images, CSS, and JavaScript files to clients.</li>
+        </ul>
+
+        <h3>Example of Express.js Usage:</h3>
+        <pre><code>const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+});
+
+app.listen(3000, () => {
+    console.log('Server running at http://localhost:3000/');
+});</code></pre>
+
+        <h2>Conclusion</h2>
+        <p>Understanding the core modules in Node.js is vital for building effective backend applications. The HTTP and File System modules enable you to manage requests and files seamlessly, while Express.js provides a powerful framework for developing web applications and APIs. Dive into these core modules to enhance your Node.js development skills!</p>
+        
+    </div>
+
+    <footer>
+        <p>© Mahen Mahindaratne 2024</p>
+    </footer>
+
+</body>
+</html>
