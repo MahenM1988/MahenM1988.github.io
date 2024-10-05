@@ -33,8 +33,8 @@ body {
 /* Tile Container */
 .tile-container {
     display: flex;
-    flex-direction: column; /* Stack tiles vertically */
-    align-items: center; /* Center tiles horizontally */
+    flex-direction: row; /* Arrange tiles in a row */
+    justify-content: center; /* Center tiles horizontally */
 }
 
 /* Tiles */
@@ -44,7 +44,7 @@ body {
     padding: 15px;
     margin: 10px;
     border-radius: 8px;
-    width: 80%; /* Set a fixed width */
+    width: 200px; /* Fixed width for each tile */
     cursor: pointer; /* Pointer on hover */
     transition: transform 0.3s, background-color 0.3s; /* Animation effects */
 }
