@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding SMTP, POP, and IMAP Settings</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9; /* Light pastel background */
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            background-color: #ffffff; /* White container */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: #ff6f61; /* Pastel coral for headings */
+        }
+
+        p {
+            font-size: 1rem;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 1rem 0;
+        }
+
+        code {
+            background-color: #f0f0f0;
+            padding: 0.2rem 0.4rem;
+            border-radius: 5px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1rem 0;
+            background-color: #e0f7fa; /* Light pastel blue */
+            border-top: 2px solid #ff6f61; /* Coral border */
+        }
+
+        footer p {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Understanding SMTP, POP, and IMAP Settings</h1>
+
+        <p>Email communication relies on various protocols to send and receive messages. The most common protocols are SMTP, POP, and IMAP. In this post, we'll explain these protocols, how to find their settings in Microsoft Outlook, and how to send an email using Python's SMTP library.</p>
+
+        <h2>What are SMTP, POP, and IMAP?</h2>
+        <ul>
+            <li><strong>SMTP (Simple Mail Transfer Protocol):</strong> Used for sending emails from a client to a server or between servers. It is a push protocol, meaning it helps send emails out.</li>
+            <li><strong>POP (Post Office Protocol):</strong> Used for retrieving emails from a server. POP downloads emails to the local device and often deletes them from the server.</li>
+            <li><strong>IMAP (Internet Message Access Protocol):</strong> Also used for retrieving emails, but it keeps emails on the server. This allows users to manage their emails from multiple devices.</li>
+        </ul>
+
+        <h2>Finding SMTP, POP, and IMAP Settings in Microsoft Outlook</h2>
+        <p>To find your email account settings in MS Outlook, follow these steps:</p>
+        <ol>
+            <li>Open MS Outlook and go to the <strong>File</strong> tab.</li>
+            <li>Select <strong>Account Settings</strong> and then <strong>Account Settings...</strong> again.</li>
+            <li>In the Email tab, select your email account and click on <strong>Change</strong>.</li>
+            <li>Here you can see the server settings for your account, including:</li>
+            <ul>
+                <li><strong>Incoming Mail Server (POP/IMAP):</strong> The server address you need to configure email retrieval.</li>
+                <li><strong>Outgoing Mail Server (SMTP):</strong> The server address for sending emails.</li>
+            </ul>
+            <li>Click on <strong>More Settings...</strong> for additional options like ports and authentication settings.</li>
+        </ol>
+
+        <h2>Sending an Email from Python Using SMTP</h2>
+        <p>Once you have the SMTP settings, you can send emails using Python's <code>smtplib</code> module. Below is a simple example of how to do this:</p>
+
+        <h3>Code Snippet:</h3>
+        <pre><code>import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+
+# Email details
+sender_email = "your_email@example.com"
+receiver_email = "recipient@example.com"
+password = "your_password"  # Use app-specific password if enabled
+
+# Create the email content
+subject = "Test Email from Python"
+body = "This is a test email sent from Python using SMTP."
+
+# Set up the MIME
+msg = MIMEMultipart()
+msg['From'] = sender_email
+msg['To'] = receiver_email
+msg['Subject'] = subject
+msg.attach(MIMEText(body, 'plain'))
+
+# SMTP server configuration
+smtp_server = "smtp.example.com"  # Replace with your SMTP server
+port = 587  # For starttls
+
+try:
+    # Connect to the server and send the email
+    server = smtplib.SMTP(smtp_server, port)
+    server.starttls()  # Secure the connection
+    server.login(sender_email, password)
+    server.send_message(msg)
+    print("Email sent successfully!")
+except Exception as e:
+    print(f"Error: {e}")
+finally:
+    server.quit()</code></pre>
+
+        <h2>Conclusion</h2>
+        <p>Understanding the roles of SMTP, POP, and IMAP is essential for managing email effectively. By finding the correct settings in Microsoft Outlook, you can ensure seamless communication. Additionally, with Python's <code>smtplib</code>, sending emails programmatically is straightforward and efficient. Happy coding!</p>
+        
+    </div>
+
+    <footer>
+        <p>© Mahen Mahindaratne 2024</p>
+    </footer>
+
+</body>
+</html>
