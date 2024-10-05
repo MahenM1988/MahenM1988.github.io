@@ -15,10 +15,11 @@ body {
     flex-direction: column; /* Keep content stacked */
     flex-grow: 1; /* Allow the container to grow and fill space */
     justify-content: center; /* Center content vertically */
+    align-items: center; /* Center items horizontally */
     padding: 20px; /* Add some padding for aesthetics */
     text-align: center; /* Center text in container */
     overflow: hidden; /* Prevent overflow */
-    max-height: calc(100vh - 60px); /* Adjust for footer */
+    height: 100%; /* Fill the full height of the viewport */
 }
 
 /* Links Style */
@@ -28,7 +29,7 @@ body {
     flex-grow: 1; /* Allow links to grow and take available space */
     margin: 0; /* Remove auto margin */
     justify-content: center; /* Center content vertically */
-    text-align: center; /* Align text to the left */
+    align-items: center; /* Center items horizontally */
 }
 
 /* Tile Container */
@@ -36,6 +37,8 @@ body {
     display: flex;
     flex-direction: row; /* Arrange tiles in a row */
     justify-content: center; /* Center tiles horizontally */
+    flex-wrap: wrap; /* Allow tiles to wrap to the next line */
+    width: 100%; /* Full width */
 }
 
 /* Tiles */
@@ -47,6 +50,7 @@ body {
     margin: 10px;
     border-radius: 8px;
     width: 200px; /* Fixed width for each tile */
+    flex-shrink: 0; /* Prevent tiles from shrinking */
     cursor: pointer; /* Pointer on hover */
     transition: transform 0.3s, background-color 0.3s; /* Animation effects */
 }
@@ -56,6 +60,10 @@ body {
 }
 
 /* Centered Links */
+.center-links {
+    width: 100%; /* Full width for centered links */
+}
+
 .center-links p {
     margin: 10px 0; /* Space between links */
 }
@@ -70,8 +78,6 @@ a {
     color: #00FF00;
     text-decoration: none;
     transition: color 0.3s ease; /* Smooth color transition */
-    aligh-self: center;
-    aligh-items: center;
 }
 
 a:hover {
